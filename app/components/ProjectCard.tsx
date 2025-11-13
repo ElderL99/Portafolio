@@ -42,21 +42,39 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* === Enlaces === */}
+      {/* === Enlaces === */}
       <div className="flex flex-wrap gap-4 items-center mt-auto">
         <a
           href={project.github}
           target="_blank"
-          className="flex items-center gap-2 text-(--gold) hover:text-(--blue) transition-colors text-sm font-medium"
+          className="flex items-center gap-2 text-(--gold) 
+               transition-all duration-300 
+               relative px-3 py-1 rounded-lg
+               before:absolute before:inset-0 before:rounded-lg 
+               before:bg-(--blue) before:opacity-0 before:blur-lg
+               before:transition-all before:duration-300
+               hover:before:opacity-40 
+               hover:text-(--blue)"
         >
-          <Github size={18} /> Backend
+          <Github size={18} className="drop-shadow-[0_0_6px_#00ccff88]" />
+          Backend
         </a>
+
         {project.frontend && (
           <a
             href={project.frontend}
             target="_blank"
-            className="flex items-center gap-2 text-(--gold) hover:text-(--blue) transition-colors text-sm font-medium"
+            className="flex items-center gap-2 text-(--gold)
+                 transition-all duration-300 
+                 relative px-3 py-1 rounded-lg
+                 before:absolute before:inset-0 before:rounded-lg 
+                 before:bg-(--gold) before:opacity-0 before:blur-lg
+                 before:transition-all before:duration-300
+                 hover:before:opacity-40 
+                 hover:text-(--blue)"
           >
-            <Globe size={18} /> Frontend
+            <Globe size={18} className="drop-shadow-[0_0_6px_#f8f8f8aa]" />
+            Frontend
           </a>
         )}
       </div>
