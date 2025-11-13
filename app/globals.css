@@ -80,3 +80,16 @@ a:hover {
   background: linear-gradient(var(--gold), var(--blue));
   border-radius: 4px;
 }
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 30s linear infinite;
+}

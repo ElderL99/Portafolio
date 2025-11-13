@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { initParticlesEngine, Particles } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import FloatingSphere from "./components/FloatingSphere";
+import TechCarousel from "./components/TechCarousel";
 
 export default function HomePage() {
   const [init, setInit] = useState(false);
@@ -34,57 +34,65 @@ export default function HomePage() {
         links: { enable: true, color: "#00b3ff", distance: 150 },
         move: { enable: true, speed: 0.6 },
         opacity: { value: 0.5 },
-        size: { value: 2 },
+        size: { value: 1.8 },
       },
     }),
     []
   );
 
-  if (!init) return null; // Evita error mientras se inicializa
+  if (!init) return null;
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center items-center text-center px-6 text-[var(--foreground)] bg-transparent">
-      {/* 🌌 Fondo de partículas */}
+    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center items-center text-center px-6 text-(--foreground) bg-transparent">
+      {/* 🌌 Fondo partículas */}
       <Particles className="absolute inset-0 -z-10" options={options} />
 
-      {/* === Contenido principal === */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-bold text-[var(--gold)] tracking-widest drop-shadow-[0_0_10px_#d4af37aa]"
-      >
-        ADÁN LUGO
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="mt-4 text-lg md:text-2xl text-[var(--muted)]"
-      >
-        Full Stack Developer • JavaScript | Next.js | Node.js | MongoDB
-      </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="mt-8 flex gap-4"
-      >
-        <a
-          href="/projects"
-          className="px-6 py-3 rounded-xl border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black transition-all duration-300"
+      {/* === Hero === */}
+      <div className="mt-20 md:mt-0">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-bold text-(--gold) tracking-[0.2em] drop-shadow-[0_0_10px_#d4af37aa]"
         >
-          Ver proyectos
-        </a>
-        <a
-          href="/contact"
-          className="px-6 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] hover:bg-[var(--blue)] hover:text-black transition-all duration-300"
+          ADÁN LUGO
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-4 text-lg md:text-2xl text-(--muted) max-w-2xl mx-auto"
         >
-          Contáctame
-        </a>
-      </motion.div>
+          Full Stack Developer • JavaScript | Next.js | Node.js | MongoDB
+        </motion.p>
+
+        {/* ⭐ Botones */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="mt-8 flex gap-4 justify-center"
+        >
+          <a
+            href="/projects"
+            className="px-6 py-3 rounded-xl border border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-black transition-all duration-300"
+          >
+            Ver proyectos
+          </a>
+          <a
+            href="/contact"
+            className="px-6 py-3 rounded-xl border border-(--blue) text-(--blue) hover:bg-(--gold) hover:text-black transition-all duration-300"
+          >
+            Contáctame
+          </a>
+        </motion.div>
+      </div>
+
+      {/* === Carrusel integrado === */}
+      <div className="w-full mt-16 md:mt-24  bg-transparent">
+        <TechCarousel />
+      </div>
     </section>
   );
 }

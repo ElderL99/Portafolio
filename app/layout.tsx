@@ -12,14 +12,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <body className="text-[var(--foreground)] font-[var(--font-body)] bg-transparent">
+      <body className="text-(--foreground) font-(--font-body) bg-transparent">
         <section>
           <Navbar />
         </section>
 
         <main className=" min-h-screen p-8">{children}</main>
 
-        <section className="fixed bottom-0 left-0 w-full">
+        <section className="">
           <Footer />
         </section>
       </body>

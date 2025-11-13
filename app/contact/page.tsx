@@ -43,12 +43,12 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-[var(--background)] text-[var(--foreground)] px-6 md:px-16 py-24">
+    <section className="min-h-screen flex flex-col justify-center items-center bg-transparent backdrop-blur-sm text-(--foreground) px-6 md:px-16 py-24">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl md:text-5xl font-bold text-[var(--gold)] text-center mb-12"
+        className="text-4xl md:text-5xl font-bold text-(--gold) text-center mb-12"
       >
         Contáctame
       </motion.h1>
@@ -58,11 +58,11 @@ export default function ContactPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
-        className="bg-[var(--background-secondary)] border border-[var(--gold)] shadow-[var(--shadow-glow-gold)] rounded-2xl w-full max-w-lg p-8 flex flex-col gap-6"
+        className="bg-(--background-secondary) border border-(--gold) shadow-(--shadow-glow-gold) rounded-2xl w-full max-w-lg p-8 flex flex-col gap-6"
       >
         <div className="flex items-center gap-3">
-          <Mail className="text-[var(--gold)]" size={22} />
-          <h2 className="text-xl font-semibold text-[var(--gold)]">
+          <Mail className="text-(--gold)" size={22} />
+          <h2 className="text-xl font-semibold text-(--gold)">
             Envíame un mensaje
           </h2>
         </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
           required
           value={form.name}
           onChange={handleChange}
-          className="p-3 rounded-lg bg-transparent border border-[var(--gold)] text-[var(--foreground)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--blue)] transition-all"
+          className="p-3 rounded-lg bg-transparent border border-(--gold) text-(--foreground) placeholder:text-(--muted) focus:outline-none focus:border-(--blue) transition-all"
         />
 
         <input
@@ -84,7 +84,7 @@ export default function ContactPage() {
           required
           value={form.email}
           onChange={handleChange}
-          className="p-3 rounded-lg bg-transparent border border-[var(--gold)] text-[var(--foreground)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--blue)] transition-all"
+          className="p-3 rounded-lg bg-transparent border border-(--gold) text-(--foreground) placeholder:text-(--muted) focus:outline-none focus:border-(--blue) transition-all"
         />
 
         <textarea
@@ -94,13 +94,13 @@ export default function ContactPage() {
           rows={5}
           value={form.message}
           onChange={handleChange}
-          className="p-3 rounded-lg bg-transparent border border-[var(--gold)] text-[var(--foreground)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--blue)] transition-all"
+          className="p-3 rounded-lg bg-transparent border border-(--gold) text-(--foreground) placeholder:text-(--muted) focus:outline-none focus:border-(--blue) transition-all"
         ></textarea>
 
         <button
           type="submit"
           disabled={status === "loading"}
-          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black transition-all duration-300 disabled:opacity-50"
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-black transition-all duration-300 disabled:opacity-50"
         >
           {status === "loading" ? (
             "Enviando..."
@@ -112,7 +112,7 @@ export default function ContactPage() {
         </button>
 
         {status === "success" && (
-          <p className="text-center text-[var(--blue)] mt-2">
+          <p className="text-center text-(--blue) mt-2">
             ✅ Mensaje enviado con éxito. ¡Gracias por contactarme!
           </p>
         )}

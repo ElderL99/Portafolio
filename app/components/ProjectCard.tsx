@@ -17,15 +17,15 @@ export default function ProjectCard({ project }: { project: Project }) {
     <motion.div
       whileHover={{ scale: 1.03 }}
       transition={{ type: "spring", stiffness: 220, damping: 12 }}
-      className="group bg-[var(--background-secondary)] border border-[var(--gold)] rounded-2xl p-6 shadow-[var(--shadow-glow-gold)] hover:shadow-[var(--shadow-glow-blue)] transition-all duration-300 flex flex-col justify-between"
+      className="group bg-(--background-secondary)/60 backdrop-blur-md border border-(--gold) rounded-2xl p-6 shadow-(--shadow-glow-gold) hover:shadow-(--shadow-glow-blue) transition-all duration-300 flex flex-col justify-between"
     >
       {/* === Título === */}
-      <h3 className="text-[var(--gold)] text-2xl font-bold mb-3 group-hover:text-[var(--blue)] transition-colors">
+      <h3 className="text-(--gold) text-2xl font-bold mb-3 group-hover:text-(--blue) transition-colors">
         {project.title}
       </h3>
 
       {/* === Descripción === */}
-      <p className="text-[var(--muted)] text-sm leading-relaxed mb-5">
+      <p className="text-(--muted) text-lg leading-relaxed mb-5">
         {project.description}
       </p>
 
@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         {project.tech.map((tech, i) => (
           <span
             key={i}
-            className="px-3 py-1 text-xs border border-[var(--blue)] text-[var(--blue)] rounded-full bg-[var(--background)]/40 backdrop-blur-sm"
+            className="px-3 py-1 text-xs border border-(--blue) text-(--blue) rounded-full bg-(--background)/40 backdrop-blur-sm"
           >
             {tech}
           </span>
@@ -46,7 +46,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <a
           href={project.github}
           target="_blank"
-          className="flex items-center gap-2 text-[var(--gold)] hover:text-[var(--blue)] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 text-(--gold) hover:text-(--blue) transition-colors text-sm font-medium"
         >
           <Github size={18} /> Backend
         </a>
@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <a
             href={project.frontend}
             target="_blank"
-            className="flex items-center gap-2 text-[var(--gold)] hover:text-[var(--blue)] transition-colors text-sm font-medium"
+            className="flex items-center gap-2 text-(--gold) hover:text-(--blue) transition-colors text-sm font-medium"
           >
             <Globe size={18} /> Frontend
           </a>

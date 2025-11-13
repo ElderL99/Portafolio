@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌌 Portafolio de Adán Lugo
 
-## Getting Started
+Bienvenido a mi portafolio personal — un espacio donde muestro mi experiencia como **Desarrollador Full Stack**, mis proyectos destacados y mi enfoque en la creación de soluciones modernas, rápidas y visualmente atractivas.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tecnologías principales
+
+- **Frontend:** Next.js, React, TailwindCSS, Framer Motion
+- **Backend:** Node.js, Express, MongoDB
+- **Infraestructura:** AWS S3, Render, Vercel
+- **Diseño:** Figma, Shadcn/UI, Lucide Icons
+
+---
+
+## 🧭 Estructura del proyecto
+
+```
+app/
+ ├── about/
+ ├── contact/
+ ├── projects/
+ │    ├── [id]/
+ │    └── page.tsx
+ ├── components/
+ │    ├── Navbar.tsx
+ │    ├── Footer.tsx
+ │    └── ProjectCard.tsx
+ ├── globals.css
+ ├── layout.tsx
+ └── page.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Características destacadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🎨 **Tema oscuro cinematográfico** inspirado en _Star Wars / Mandalorian Alloy_
+- 🪐 Fondo dinámico con partículas interactivas y efecto holográfico
+- 📱 Diseño **responsive** con sidebar móvil animado
+- 💫 Animaciones suaves usando **Framer Motion**
+- 🧩 Estructura modular con componentes reutilizables
+- 🌍 Secciones principales:
+  - Inicio
+  - Sobre mí
+  - Proyectos
+  - Contacto (con integración a Formspree)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Instalación y ejecución local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clonar el repositorio
+git clone https://github.com/ElderL99/adan-portfolio.git
+cd adan-portfolio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Instalar dependencias
+npm install
 
-## Deploy on Vercel
+# Iniciar el servidor de desarrollo
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Abrir en tu navegador: [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔗 Enlaces de proyectos destacados
+
+| Proyecto                                                                      | Descripción                                    | Tecnologías                     |
+| ----------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------- |
+| [Escuadrón Financiero](https://github.com/ElderL99/escuadronfinancierapi.git) | Plataforma de préstamos para personal militar  | Node.js, MongoDB, React, AWS S3 |
+| [Dev.to Clone](https://github.com/ElderL99/devto-clone)                       | Clon funcional de Dev.to con autenticación JWT | React, Express, MongoDB         |
+| [App de Inventario](https://github.com/ElderL99/Inventario-front)             | Gestión de productos con exportación PDF/Excel | Next.js, Express, MongoDB       |
+
+---
+
+## 🧑‍💻 Autor
+
+**Adán Lugo Barrientos**  
+Full Stack Developer — JavaScript | React | Node.js | MongoDB  
+📧 [adanlugobarrientos@gmail.com](mailto:adanlugobarrientos@gmail.com)
+
+---
+
+## 🪄 Licencia
+
+Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y adaptarlo libremente citando la autoría original.
+
+---
+
+> “El código debe ser tan elegante como la Fuerza: invisible, poderoso y en equilibrio.” ✨

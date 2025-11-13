@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 
 export default function ProjectsPage() {
@@ -18,15 +17,16 @@ export default function ProjectsPage() {
         "Tailwind",
         "AWS S3",
       ],
-      github: "https://github.com/ElderL99/escuadronfinancierapi.git",
-      frontend: "https://github.com/ElderL99/escuadronFinanciero-Front.git",
+      github: "https://github.com/ElderL99/escuadron-fianciero-demo",
+      frontend: "https://escuadron-financiero-front.vercel.app",
     },
     {
-      title: "Dev.to Clone",
+      title: "Store DummyJSON",
       description:
-        "Clon funcional de la plataforma Dev.to con autenticación, publicación de artículos, reacciones únicas por usuario y arquitectura limpia en backend.",
+        "Tienda moderna construida en React con autenticación, listado de productos, detalle individual, animaciones con Framer Motion y consumo de la API DummyJSON. Incluye rutas protegidas, diseño responsivo y validación de formularios.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/ElderL99/devto-clone",
+      github: "https://github.com/ElderL99/store-DummuJSON",
+      frontend: "https://store-dummu-json.vercel.app",
     },
     {
       title: "App de Inventario",
@@ -38,17 +38,17 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <section className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-6 md:px-16 py-24  ">
+    <section className="relative min-h-screen bg-transparent text-(--foreground) px-6 md:px-16 py-24 backdrop-blur-sm flex flex-col items-center ">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl md:text-5xl font-bold text-[var(--gold)] text-center mb-12 "
+        className="text-3xl md:text-5xl font-bold text-(--gold) text-center mb-12 "
       >
         Proyectos Destacados
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1  gap-8">
         {projects.map((project, i) => (
           <motion.div
             key={i}
