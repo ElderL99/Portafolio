@@ -25,7 +25,7 @@ export default function Footer() {
           <Mail size={22} />
         </a>
         <a
-          href="https://linkedin.com/in/adanlugo"
+          href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
           target="_blank"
           className="text-(--gold) hover:text-(--blue) transition-colors"
         >

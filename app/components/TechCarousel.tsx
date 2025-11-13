@@ -38,7 +38,9 @@ export default function TechCarousel() {
                 alt={tech.name}
                 width={55}
                 height={55}
-                className="object-contain opacity-95"
+                className="object-contain opacity-95 drop-shadow-[0_0_10px_#f8f8f877]
+                  group-hover:drop-shadow-[0_0_20px_#00ccffcc] 
+                  hover:rotate-6 hover:-rotate-y-6 hover:skew-y-3"
               />
             </div>
 

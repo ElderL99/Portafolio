@@ -29,10 +29,10 @@ export default function HomePage() {
         },
       },
       particles: {
-        number: { value: 70 },
+        number: { value: 30 },
         color: { value: "#d4af37" },
         links: { enable: true, color: "#00b3ff", distance: 150 },
-        move: { enable: true, speed: 0.6 },
+        move: { enable: true, speed: 0.5 },
         opacity: { value: 0.5 },
         size: { value: 1.8 },
       },
@@ -72,17 +72,17 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="mt-8 flex gap-4 justify-center"
+          className="mt-8 flex gap-4 justify-center items-center "
         >
           <a
             href="/projects"
-            className="px-6 py-3 rounded-xl border border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-black transition-all duration-300"
+            className="px-3 py-3 rounded-xl border border-(--gold) text-(--gold) hover:bg-(--gold)/10 hover:text-black transition-all duration-300"
           >
             Ver proyectos
           </a>
           <a
             href="/contact"
-            className="px-6 py-3 rounded-xl border border-(--blue) text-(--blue) hover:bg-(--gold) hover:text-black transition-all duration-300"
+            className="px-6 py-3 rounded-xl border border-(--blue) text-(--blue) hover:bg-(--blue)/10 hover:text-white transition-all duration-300"
           >
             Contáctame
           </a>
