@@ -3,7 +3,7 @@ import axios from "axios";
 // instacia base
 
 const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://my-own-api-nrzr.onrender.com",
   timeout: 10000,
   withCredentials: false,
   headers: {
