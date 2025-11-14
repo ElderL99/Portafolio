@@ -81,6 +81,28 @@ a:hover {
   border-radius: 4px;
 }
 
+/* === 🌠 Toast estilo galáctico === */
+.toast-gold {
+  background: var(--background-secondary);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 15px var(--gold);
+}
+
+.toast-blue {
+  background: var(--background-secondary);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  box-shadow: 0 0 15px var(--blue);
+}
+
+.toast-error {
+  background: #220000;
+  color: #ff6666;
+  border: 1px solid #ff3333;
+  box-shadow: 0 0 20px #ff333366;
+}
+
 @keyframes infinite-scroll {
   0% {
     transform: translateX(0);

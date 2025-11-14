@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendContactMessage } from "../api/contact.js";
+import toast from "react-hot-toast";
 
 const ContactSchema = z.object({
   name: z.string().min(2, "Tu nombre es muy corto"),
@@ -28,7 +29,6 @@ export default function useContactForm() {
     resolver: zodResolver(ContactSchema),
   });
 
-  // 🟩 Enviar formulario
   const onSubmit = async (data: ContactFormData) => {
     setStatus("loading");
 
@@ -37,13 +37,28 @@ export default function useContactForm() {
 
       if (res.data.success) {
         setStatus("success");
+        toast.success("Mensaje enviado con éxito 🚀", {
+          icon: "🌌",
+          duration: 4000,
+          className: "toast-gold",
+        });
+
         reset();
       } else {
         setStatus("error");
+        toast.error("No se pudo enviar el mensaje ❌", {
+          duration: 4000,
+          className: "toast-error",
+        });
       }
     } catch (err) {
       console.error("❌ Error en el envío:", err);
       setStatus("error");
+
+      toast.error("Hubo un error en el servidor 💥", {
+        duration: 4000,
+        className: "toast-error",
+      });
     }
   };
 
