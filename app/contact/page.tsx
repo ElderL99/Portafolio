@@ -1,46 +1,10 @@
 "use client";
-import { ChangeEvent, FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send } from "lucide-react";
+import useContactForm from "../src/hooks/useContactForm";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const res = await fetch("https://formspree.io/f/mzzbvqra", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch (err) {
-      setStatus("error");
-    }
-  };
+  const { register, handleSubmit, errors, status } = useContactForm();
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center bg-transparent backdrop-blur-sm text-(--foreground) px-6 md:px-16 py-24">
@@ -67,40 +31,44 @@ export default function ContactPage() {
           </h2>
         </div>
 
+        {/* Nombre */}
         <input
           type="text"
-          name="name"
           placeholder="Tu nombre"
-          required
-          value={form.name}
-          onChange={handleChange}
-          className="p-3 rounded-lg bg-transparent border border-(--gold) text-(--foreground) placeholder:text-(--muted) focus:outline-none focus:border-(--blue) transition-all"
+          {...register("name")}
+          className="p-3 rounded-lg bg-transparent border border-(--gold)"
         />
+        {errors.name && (
+          <p className="text-red-400 text-sm">{errors.name.message}</p>
+        )}
 
+        {/* Email */}
         <input
           type="email"
-          name="email"
           placeholder="Tu correo electrónico"
-          required
-          value={form.email}
-          onChange={handleChange}
-          className="p-3 rounded-lg bg-transparent border border-(--gold) text-(--foreground) placeholder:text-(--muted) focus:outline-none focus:border-(--blue) transition-all"
+          {...register("email")}
+          className="p-3 rounded-lg bg-transparent border border-(--gold)"
         />
+        {errors.email && (
+          <p className="text-red-400 text-sm">{errors.email.message}</p>
+        )}
 
+        {/* Mensaje */}
         <textarea
-          name="message"
           placeholder="Tu mensaje"
-          required
           rows={5}
-          value={form.message}
-          onChange={handleChange}
-          className="p-3 rounded-lg bg-transparent border border-(--gold) text-(--foreground) placeholder:text-(--muted) focus:outline-none focus:border-(--blue) transition-all"
+          {...register("message")}
+          className="p-3 rounded-lg bg-transparent border border-(--gold)"
         ></textarea>
+        {errors.message && (
+          <p className="text-red-400 text-sm">{errors.message.message}</p>
+        )}
 
+        {/* Botón */}
         <button
           type="submit"
           disabled={status === "loading"}
-          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-black transition-all duration-300 disabled:opacity-50"
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-black transition-all duration-300"
         >
           {status === "loading" ? (
             "Enviando..."
@@ -113,13 +81,12 @@ export default function ContactPage() {
 
         {status === "success" && (
           <p className="text-center text-(--blue) mt-2">
-            ✅ Mensaje enviado con éxito. ¡Gracias por contactarme!
+            ✅ Mensaje enviado con éxito.
           </p>
         )}
-
         {status === "error" && (
           <p className="text-center text-red-400 mt-2">
-            ❌ Ocurrió un error. Intenta de nuevo más tarde.
+            ❌ Ocurrió un error. Intenta de nuevo.
           </p>
         )}
       </motion.form>
