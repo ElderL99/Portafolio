@@ -1,8 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 
 export default function ProjectsPage() {
+  const shouldReduceMotion = useReducedMotion();
+
   const projects = [
     {
       title: "Escuadrón Financiero",
@@ -40,9 +42,10 @@ export default function ProjectsPage() {
   return (
     <section className="relative min-h-screen bg-transparent text-(--foreground) px-6 md:px-16 py-24 backdrop-blur-sm flex flex-col items-center ">
       <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : -24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
         className="text-3xl md:text-5xl font-bold text-(--gold) text-center mb-12 "
       >
         Proyectos Destacados
@@ -52,9 +55,10 @@ export default function ProjectsPage() {
         {projects.map((project, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.15, duration: 0.5 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ delay: shouldReduceMotion ? 0 : i * 0.08, duration: 0.35 }}
           >
             <ProjectCard project={project} />
           </motion.div>

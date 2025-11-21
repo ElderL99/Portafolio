@@ -9,11 +9,19 @@ export default function HomePage() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
+
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
-      setInit(true);
+      if (isMounted) {
+        setInit(true);
+      }
     });
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const options = useMemo(

@@ -60,6 +60,7 @@ export default function useContactForm() {
         className: "toast-error",
       });
     }
+    setTimeout(() => setStatus("idle"), 3000);
   };
 
   return {
