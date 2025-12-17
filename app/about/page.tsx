@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -46,14 +47,11 @@ export default function AboutPage() {
         <p className="mb-6">
           Me apasiona construir interfaces limpias, optimizadas y accesibles,
           con una arquitectura backend sólida. Además, estoy cursando la{" "}
-          <span className="text-(--blue) font-semibold px-1">
+          <a href="https://www.byu.edu">
             Ingeniería en Software en Brigham Young University Idaho
-          </span>
-          y me formé como Full Stack Developer en{" "}
-          <a href="https://kodemia.mx">
-            {" "}
-            <span className="text-(--blue)">Kodemia</span>
           </a>
+          y me formé como Full Stack Developer en{" "}
+          <a href="https://www.kodemia.mx">Kodemia</a>
         </p>
 
         <p className="mb-8">
