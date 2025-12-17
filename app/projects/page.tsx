@@ -7,29 +7,42 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      title: "LC Inova",
+      description:
+        "LC Inova es un proyecto de desarrollo de software enfocado en la creación de plataformas web, sistemas internos y APIs escalables para empresas y emprendedores que necesitan soluciones tecnológicas reales, seguras y bien diseñadas. En LC Inova diseño y construyo productos end-to-end: desde la idea y la arquitectura hasta el despliegue en producción. Trabajo con aplicaciones enfocadas en automatizar procesos, centralizar información y mejorar la toma de decisiones, siempre priorizando rendimiento, seguridad y experiencia de usuario. He desarrollado dashboards administrativos, sistemas con autenticación y roles, manejo de datos en tiempo real, carga de archivos, integraciones externas y despliegues en la nube. Cada proyecto está pensado para ser mantenible, escalable y alineado a objetivos de negocio reales. LC Inova representa mi enfoque como ingeniero: construir software que la gente realmente usa, con impacto directo y medible.",
+      tech: [
+        "TypeScript",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Tailwind CSS",
+        "AWS",
+        "REST APIs",
+      ],
+      github: "https://github.com/ElderL99/lcinova-backend",
+      frontend: "https://lcinova.com.mx",
+    },
+
+    {
       title: "Escuadrón Financiero",
       description:
-        "Plataforma completa para gestión de préstamos al personal militar. Incluye autenticación JWT, panel admin, firma digital, contratos PDF, AWS S3 y dashboard moderno.",
+        "Escuadrón Financiero es una plataforma web integral para la gestión de préstamos dirigida al personal militar, diseñada para digitalizar y automatizar todo el flujo del crédito. El sistema permite el registro y autenticación segura de usuarios mediante JWT, gestión de roles (admin/usuario), creación y seguimiento de solicitudes de préstamo, carga y administración de documentos, generación de contratos en PDF y firma digital. Incluye un panel administrativo con métricas clave, control de estados, historial de solicitudes y un dashboard moderno enfocado en eficiencia operativa. La plataforma integra almacenamiento de archivos en AWS S3, arquitectura escalable y una experiencia de usuario clara, segura y orientada a procesos reales de negocio.",
       tech: [
         "Node.js",
         "Express",
         "MongoDB",
         "React",
         "Vite",
-        "Tailwind",
+        "Tailwind CSS",
         "AWS S3",
+        "JWT",
+        "REST APIs",
       ],
       github: "https://github.com/ElderL99/escuadron-fianciero-demo",
-      frontend: "https://escuadron-financiero-front.vercel.app",
+      frontend: "https://escuadronfinanciero.com",
     },
-    {
-      title: "Store DummyJSON",
-      description:
-        "Tienda moderna construida en React con autenticación, listado de productos, detalle individual, animaciones con Framer Motion y consumo de la API DummyJSON. Incluye rutas protegidas, diseño responsivo y validación de formularios.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/ElderL99/store-DummuJSON",
-      frontend: "https://store-dummu-json.vercel.app",
-    },
+
     {
       title: "App de Inventario",
       description:
@@ -58,7 +71,10 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ delay: shouldReduceMotion ? 0 : i * 0.08, duration: 0.35 }}
+            transition={{
+              delay: shouldReduceMotion ? 0 : i * 0.08,
+              duration: 0.35,
+            }}
           >
             <ProjectCard project={project} />
           </motion.div>
